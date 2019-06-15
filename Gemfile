@@ -29,6 +29,8 @@ gem 'bootstrap', '~> 4.3.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'simple_form', '~> 3.5', '>= 3.5.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
