@@ -1,0 +1,17 @@
+<h1><%= t('listing', name: t('shopping_list.title', count: 1)) %></h1>
+
+<table class="table table-striped table-hover">
+
+ <tr>
+   <th scope="row"><%= t('shopping_list.name') %>:</th>
+   <td><%= @shopping_list.name %></td>
+ </tr>
+ <tr>
+   <th scope="row"><%= t('shopping_list.completed') %>:</th>
+   <td><%= @shopping_list.completed %></td>
+ </tr>
+
+</table>
+
+<%= link_to t('edit'), edit_shopping_list_path(@shopping_list), class: 'btn btn-primary', role: :button %>
+<%= link_to t('index'), shopping_lists_path, class: 'btn btn-outline-secondary', role: :button %>
