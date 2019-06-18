@@ -10,6 +10,23 @@
    <th scope="row"><%= t('shopping_list.completed') %>:</th>
    <td><%= @shopping_list.completed %></td>
  </tr>
+  <tr>
+   <th scope="row"><%= t('items') %>:</th>
+   <td>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+        </tr>
+        <% @shopping_list.items.map do |item| %>
+          <tr>
+            <td><%= item.description %></td>
+            <td><%= item.quantity %></td>
+          </tr>
+        <% end %>
+      </table>
+   </td>
+ </tr>
 
 </table>
 

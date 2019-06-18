@@ -2,5 +2,5 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", "javascript:void(0)", onclick: 'remove_fields(this)'%>
+  <%= link_to_remove_fields "remove", f %>
 </div>

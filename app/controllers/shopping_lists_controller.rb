@@ -14,7 +14,6 @@ class ShoppingListsController < ApplicationController
   # GET /shopping_lists/new
   def new
     @shopping_list = ShoppingList.new
-    @shopping_list.items.build
   end
 
   # GET /shopping_lists/1/edit
@@ -69,6 +68,6 @@ class ShoppingListsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def shopping_list_params
-    params.require(:shopping_list).permit(:name, :completed, items_attributes: [:description, :quantity])
+    params.require(:shopping_list).permit(:name, :completed, items_attributes: [:id, :description, :quantity, :_destroy])
   end
 end
