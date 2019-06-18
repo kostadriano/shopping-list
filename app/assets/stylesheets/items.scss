@@ -1,3 +1,13 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.items-fields-container {
+  margin: 20px 0
+}
+
+.items-fields {
+  display: flex;
+  justify-content: space-between;
+  align-content: center
+}

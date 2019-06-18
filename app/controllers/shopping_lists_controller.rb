@@ -1,5 +1,5 @@
 class ShoppingListsController < ApplicationController
-  before_action :set_shopping_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_shopping_list, only: %i[show edit update destroy]
 
   # GET /shopping_lists
   # GET /shopping_lists.json
@@ -9,17 +9,16 @@ class ShoppingListsController < ApplicationController
 
   # GET /shopping_lists/1
   # GET /shopping_lists/1.json
-  def show
-  end
+  def show; end
 
   # GET /shopping_lists/new
   def new
     @shopping_list = ShoppingList.new
+    @shopping_list.items.build
   end
 
   # GET /shopping_lists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /shopping_lists
   # POST /shopping_lists.json
@@ -62,13 +61,14 @@ class ShoppingListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_shopping_list
-      @shopping_list = ShoppingList.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def shopping_list_params
-      params.require(:shopping_list).permit(:name, :completed)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_shopping_list
+    @shopping_list = ShoppingList.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def shopping_list_params
+    params.require(:shopping_list).permit(:name, :completed, items_attributes: [:description, :quantity])
+  end
 end
